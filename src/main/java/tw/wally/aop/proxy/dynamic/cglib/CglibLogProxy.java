@@ -1,5 +1,6 @@
 package tw.wally.aop.proxy.dynamic.cglib;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
@@ -11,7 +12,7 @@ import java.util.Arrays;
 /**
  * @author - wally55077@gmail.com
  */
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class CglibLogProxy implements MethodInterceptor {
 
     private final Object target;
@@ -31,14 +32,13 @@ public class CglibLogProxy implements MethodInterceptor {
 
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable, IllegalAccessException {
-
         // 裡面的邏輯就是通知 (Advice)
         // 環繞通知開始
         try {
             // 前置通知
             String methodName = method.getName();
             System.out.printf("Cglib proxy before : %s , args : %s%n", methodName, Arrays.toString(objects));
-            var result = methodProxy.invoke(target, objects);
+            var result = method.invoke(target, objects);
             // 返回通知
             System.out.printf("Cglib proxy after : %s , return : [%s]%n", methodName, result);
             return result;

@@ -20,28 +20,28 @@ public class Main {
 
     private static void logCalculator(int a, int b) {
         Calculator logCalculator = new LogCalculatorImpl();
-        logCalculator.add(a, b);
+        logCalculator.plus(a, b);
         System.out.println();
     }
 
     private static void calculatorProxyPattern(int a, int b) {
         Calculator target = new CalculatorTarget();
         Calculator calculatorProxy = new CalculatorProxy(target);
-        calculatorProxy.add(a, b);
+        calculatorProxy.plus(a, b);
         System.out.println();
     }
 
     private static void calculatorJdkProxy(int a, int b) {
         Calculator target = new CalculatorTarget();
         Calculator jdkProxy = JDKLogProxy.newInstance(target);
-        jdkProxy.add(a, b);
+        jdkProxy.plus(a, b);
         System.out.println();
     }
 
     private static void calculatorCglibProxy(int a, int b) {
         Calculator target = new CalculatorTarget();
         Calculator cglibProxy = CglibLogProxy.newInstance(target);
-        cglibProxy.add(a, b);
+        cglibProxy.plus(a, b);
         System.out.println();
     }
 

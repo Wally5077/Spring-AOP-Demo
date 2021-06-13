@@ -1,8 +1,9 @@
-package tw.wally.aop.services;
+package tw.wally.aop.services.impl;
 
 import org.springframework.stereotype.Service;
 import tw.wally.aop.exceptions.TokenInvalidException;
 import tw.wally.aop.model.Token;
+import tw.wally.aop.services.TokenService;
 
 import java.util.HashMap;
 import java.util.Map;

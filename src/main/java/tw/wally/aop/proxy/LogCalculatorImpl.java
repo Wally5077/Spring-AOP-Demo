@@ -9,12 +9,19 @@ import java.util.Arrays;
  */
 public class LogCalculatorImpl implements Calculator {
     @Override
-    public int add(int a, int b) {
-        var methodName = "add";
-        // 前置通知
+    public int plus(int a, int b) {
+        var methodName = "plus";
         System.out.printf("Log calculator before : %s , args : %s%n", methodName, Arrays.asList(a, b));
         var result = a + b;
-        // 返回通知
+        System.out.printf("Log calculator after : %s , return : [%s]%n", methodName, result);
+        return result;
+    }
+
+    @Override
+    public int minus(int a, int b) {
+        var methodName = "minus";
+        System.out.printf("Log calculator before : %s , args : %s%n", methodName, Arrays.asList(a, b));
+        var result = a - b;
         System.out.printf("Log calculator after : %s , return : [%s]%n", methodName, result);
         return result;
     }

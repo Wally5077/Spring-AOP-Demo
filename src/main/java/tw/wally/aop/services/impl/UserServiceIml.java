@@ -1,4 +1,4 @@
-package tw.wally.aop.services;
+package tw.wally.aop.services.impl;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,6 +13,7 @@ import tw.wally.aop.model.response.LoginResponse;
 import tw.wally.aop.model.response.SignUpResponse;
 import tw.wally.aop.model.response.UpdateUserResponse;
 import tw.wally.aop.repositories.UserRepository;
+import tw.wally.aop.services.UserService;
 
 import javax.transaction.Transactional;
 

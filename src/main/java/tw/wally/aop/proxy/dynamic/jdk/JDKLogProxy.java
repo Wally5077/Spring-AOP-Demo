@@ -1,5 +1,6 @@
 package tw.wally.aop.proxy.dynamic.jdk;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 
 import java.lang.reflect.InvocationHandler;
@@ -10,7 +11,7 @@ import java.util.Arrays;
 /**
  * @author - wally55077@gmail.com
  */
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class JDKLogProxy implements InvocationHandler {
 
     private final Object target;

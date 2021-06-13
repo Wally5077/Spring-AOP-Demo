@@ -5,7 +5,12 @@ package tw.wally.aop.proxy.pattern;
  */
 public class CalculatorTarget implements Calculator {
     @Override
-    public int add(int a, int b) {
+    public int plus(int a, int b) {
         return a + b;
+    }
+
+    @Override
+    public int minus(int a, int b) {
+        return a - b;
     }
 }
